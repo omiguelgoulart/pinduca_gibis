@@ -1,0 +1,37 @@
+[
+    {
+        "id":1719151543531,
+        "titulo":"Naruto Gold Vol. 12",
+        "descricao":"Começa a primeira batalha da etapa final do Exame Chunin!",
+        "foto":"https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_vfvtbp2dt93uj9gmjlmj1avi5o/-S897-FWEBP",
+        "editora":"panini",
+        "preco":23.73,
+        "estoque":10
+    },
+    {
+        "id":1719151597537,
+        "titulo":"Marvel Action: Vingadores Vol. 1",
+        "descricao":"Uma nova era de pura ação para o Vingadores se inicia!",
+        "foto":"https://m.media-amazon.com/images/I/71N9Ec6DyrL._AC_UF1000,1000_QL80_.jpg","editora":"marvel",
+        "preco":29.9,
+        "estoque":10
+    },
+    {
+        "id":1719152258641,
+        "titulo":"Donald Duplo Vol. 2",
+        "descricao":"Duplo. DonaldDuplo. Espião de uma instituição tão confidencial, mas tão confidencial, que é melhor chamá-la apenas de Agência.",
+        "foto":"https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_p10lkh5is12dr332l5mhekd61q/-S897-FWEBP",
+        "editora":"disney",
+        "preco":109.9,
+        "estoque":10
+    },
+    {
+        "id":1719152342332,
+        "titulo":"Batman: Cidade Da Loucura",
+        "descricao":"Enterrado nas profundezas de Gotham City, existe outra Gotham.",
+        "foto":"https://d14d9vp3wdof84.cloudfront.net/image/589816272436/image_do1qh2mcmd4nbdptf88joimo6s/-S897-FWEBP",
+        "editora":"dc",
+        "preco":76.9,
+        "estoque":10
+    }
+]
