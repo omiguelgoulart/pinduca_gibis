@@ -3,12 +3,17 @@ import Carrinho from "./Carrinho"
 import { useState } from "react"
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { FaSearch } from "react-icons/fa";
+import ModalPesquisa from "./ModalPesquisa";
 
 function Header() {
   const [open, setOpen] = useState(false);
+  const [pesquisa, setPesquisa] = useState(false);
 
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
+
+  const openPesquisa = () => setPesquisa(true);
+  const closePesquisa = () => setPesquisa(false);
     return (
       <div>
         <div>
@@ -26,7 +31,7 @@ function Header() {
       className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       placeholder="Buscar produtos"
     />
-    <button className="px-4 py-2 bg-cyan-700 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+    <button onClick={openPesquisa} className="px-4 py-2 bg-cyan-700 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
       <FaSearch />
     </button>
   </div>
@@ -41,6 +46,9 @@ function Header() {
         </div>
       <Modal open={open} onClose={onCloseModal} center>
         <Carrinho />
+      </Modal>
+      <Modal open={pesquisa} onClose={closePesquisa} center>
+        <ModalPesquisa />
       </Modal>
     </div>
   

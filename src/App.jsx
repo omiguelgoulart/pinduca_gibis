@@ -31,7 +31,7 @@ function App() {
                 <div className="w-4/5 bg-gray-200">
                     <div className="px-8 py-4">
                         <button onClick={onOpenModal} className="px-3 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-600">
-                            Open modal
+                            Inserir Gibi
                         </button>
                         <Modal open={open} onClose={onCloseModal} center>
                             <FormGibi />
