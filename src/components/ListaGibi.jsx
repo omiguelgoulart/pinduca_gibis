@@ -1,37 +1,37 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Toaster, toast } from 'sonner';
+import { toast } from 'sonner';
 
 function ListaGibi({ gibis }) {
-  const [, setGibiList] = useState(gibis);
-  const [gibisFiltrados, setGibisFiltrados] = useState(gibis);
+  const [gibisFiltrados, setGibisFiltrados] = useState([]);
 
   useEffect(() => {
-    setGibiList(gibis);
     setGibisFiltrados(gibis);
   }, [gibis]);
 
-  
-
   function adicionarAoCarrinho(id) {
     const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    const gibi = gibis.find((g) => g.id === id);
+    const gibiIndex = gibis.findIndex((g) => g.id === id);
+    const gibi = gibis[gibiIndex];
 
     if (gibi.estoque > 0) {
-      const index = carrinho.findIndex((item) => item.id === id);
-      if (index === -1) {
-        carrinho.push({ ...gibi, estoque: 1 });
+      const carrinhoIndex = carrinho.findIndex((item) => item.id === id);
+      if (carrinhoIndex === -1) {
+        carrinho.push({ ...gibi, quantidade: 1 });
       } else {
-        carrinho[index].estoque += 1;
+        carrinho[carrinhoIndex].quantidade += 1;
       }
 
-      const updatedGibis = gibis.map((item) =>
-        item.id === id ? { ...item, estoque: item.estoque - 1 } : item
-      );
-
-      setGibiList(updatedGibis);
-      setGibisFiltrados(updatedGibis);
+      // Atualiza o carrinho no localStorage
       localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+      // Atualiza o estoque do gibi no localStorage
+      const updatedGibis = [...gibis];
+      updatedGibis[gibiIndex].estoque -= 1;
+      localStorage.setItem('gibis', JSON.stringify(updatedGibis));
+
+      // Atualiza o estado local para refletir a mudança
+      setGibisFiltrados(updatedGibis);
 
       toast.success('Item adicionado ao carrinho');
     }
@@ -47,7 +47,6 @@ function ListaGibi({ gibis }) {
 
   return (
     <>
-      <Toaster position="top-right" richColors />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-2 bg-gray-200">
         {gibisFiltrados.map((gibi) => (
           <div key={gibi.id} className="bg-white border-2 border-gray-300 rounded-lg p-4 flex flex-col items-center justify-around">

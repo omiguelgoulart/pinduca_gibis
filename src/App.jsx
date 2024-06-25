@@ -5,6 +5,7 @@ import ListaGibi from './components/ListaGibi';
 import FormGibi from './components/FormGibi';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import { Toaster } from 'sonner';
 
 function App() {
     const [open, setOpen] = useState(false);
@@ -53,6 +54,7 @@ function App() {
                     </div>
                 </div>
             </div>
+            <Toaster richColors bottom-center />
         </div>
     );
 }

@@ -12,6 +12,7 @@ function Sidebar({ gibis, onFiltrar, onOrdenar }) {
     ]);
 
     const watchInputs = watch();
+
     useEffect(() => {
         const editorasSelecionadas = opcoes.filter(opcao => watchInputs[opcao.filtro]);
         let novosGibisFiltrados = gibis.filter(gibi =>
@@ -47,7 +48,6 @@ function Sidebar({ gibis, onFiltrar, onOrdenar }) {
                 <option value="maior-para-menor">Maior para Menor</option>
                 <option value="menor-para-maior">Menor para Maior</option>
             </select>
-
         </div>
     );
 }

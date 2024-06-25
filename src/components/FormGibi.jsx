@@ -20,7 +20,7 @@ function FormGibi() {
 
   function cadastraGibi(data) {
     // Gerar ID único para o gibi
-    const id = Date.now(); // Usando timestamp como ID único (você pode ajustar conforme necessário)
+    const id = Date.now(); 
 
     const novaEntrada = new Gibi(
       id,
@@ -36,7 +36,7 @@ function FormGibi() {
     const entradaAtualizada = [...entradaExistente, novaEntrada];
     localStorage.setItem("gibis", JSON.stringify(entradaAtualizada));
 
-    setGibiList(entradaAtualizada); // Atualiza o estado local (opcional, dependendo da sua aplicação)
+    setGibiList(entradaAtualizada); // Atualiza o estado local 
     setFocus("titulo");
     toast.success("Gibi cadastrado com sucesso!");
     reset();
