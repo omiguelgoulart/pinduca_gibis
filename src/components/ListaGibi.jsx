@@ -62,7 +62,7 @@ function ListaGibi({ gibis }) {
                 {gibi.estoque > 0 ? (
                   <button
                     onClick={() => adicionarAoCarrinho(gibi.id)}
-                    className="px-3 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-600"
+                    className="px-3 py-2 bg-cyan-700 text-white font-bold rounded hover:bg-blue-600"
                   >
                     Comprar
                   </button>

@@ -32,14 +32,14 @@ function Header() {
       placeholder="Buscar produtos"
     />
     <button onClick={openPesquisa} className="px-4 py-2 bg-cyan-700 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
-      <FaSearch />
+      <FaSearch size={24} />
     </button>
   </div>
   <button
-    className="px-8 py-4 bg-cyan-700 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+    className=" p-8 bg-cyan-700 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
     onClick={onOpenModal}
   >
-    <RiShoppingCart2Line />
+    <RiShoppingCart2Line size={32} />
   </button>
 
 </div>
